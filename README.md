@@ -5,8 +5,8 @@ programming language.
 
 ### Roadmap
 
-- [ ] Solve 5 problems
-- [ ] Upload repository to Github
+- [x] Solve 5 problems
+- [x] Upload repository to GitHub
 - [ ] solve 5 more Problems
 - [ ] automate scaffolding for new problems
 - [ ] solve 20 more problems

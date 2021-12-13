@@ -8,35 +8,37 @@ import (
 
 func Test26_RemoveDuplicatesFromSortedArray(t *testing.T) {
 
-	input := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-	want := []int{0, 1, 2, 3, 4, 0, 0, 0, 0, 0}
+	tests := []struct {
+		input  []int
+		result []int
+		length int
+	}{{
+		[]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4},
+		[]int{0, 1, 2, 3, 4, 0, 0, 0, 0, 0},
+		5,
+	}, {
+		[]int{1, 1, 2, 3, 3},
+		[]int{1, 2, 3, 0, 0},
+		3,
+	}, {
+		[]int{1, 1, 2},
+		[]int{1, 2, 0},
+		2,
+	}, {
+		[]int{1, 2, 3},
+		[]int{1, 2, 3},
+		3,
+	}, {
+		[]int{},
+		[]int{},
+		0,
+	},
+	}
 
-	assert.Equal(t, 5, removeDuplicates(input))
-	assert.Equal(t, want, input)
-
-	input = []int{1, 1, 2, 3, 3}
-	want = []int{1, 2, 3, 0, 0}
-
-	assert.Equal(t, 3, removeDuplicates(input))
-	assert.Equal(t, want, input)
-
-	input = []int{1, 1, 2}
-	want = []int{1, 2, 0}
-
-	assert.Equal(t, 2, removeDuplicates(input))
-	assert.Equal(t, want, input)
-
-	input = []int{1, 2, 3}
-	want = []int{1, 2, 3}
-
-	assert.Equal(t, 3, removeDuplicates(input))
-	assert.Equal(t, want, input)
-
-	input = []int{}
-	want = []int{}
-
-	assert.Equal(t, 0, removeDuplicates(input))
-	assert.Equal(t, want, input)
+	for _, tt := range tests {
+		assert.Equal(t, tt.length, removeDuplicates(tt.input))
+		assert.Equal(t, tt.result, tt.input)
+	}
 }
 
 func removeDuplicates(nums []int) int {

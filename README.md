@@ -7,7 +7,7 @@ programming language.
 
 - [x] Solve 5 problems
 - [x] Upload repository to GitHub
-- [ ] solve 5 more Problems
+- [x] solve 5 more Problems
 - [ ] automate scaffolding for new problems
 - [ ] solve 20 more problems
 - [ ] improve automation around scaffolding
